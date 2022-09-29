@@ -548,8 +548,13 @@ func buildURLParams(userURL string, params map[string]string) (string, error) {
 // 2. Authorization Headers
 // 3. Any other header requested
 func addHTTPHeaders(ro *RequestOptions, req *http.Request) {
+	/*
+		for key, value := range ro.Headers {
+			req.Header.Set(key, value)
+		}
+	*/
 	for key, value := range ro.Headers {
-		req.Header.Set(key, value)
+		req.Header[key] = []string{value} //直接赋值
 	}
 
 	if ro.UserAgent != "" {
