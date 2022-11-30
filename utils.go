@@ -9,7 +9,7 @@ import (
 )
 
 const (
-	localUserAgent = "XGRequests/0.10"
+	localUserAgent = "XGRequests/0.2.0"
 
 	// Default value for net.Dialer Timeout
 	dialTimeout = 30 * time.Second
